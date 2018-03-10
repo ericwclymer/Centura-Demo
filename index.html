@@ -1,29 +1,20 @@
 <html>
 	<head>
+		<!--
+			These are resources that others have developed that they've made available to us
+		-->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		<style type="text/css">
-			/* This style applies to the whole "body", unless overridden */
-			body {
-				margin: auto;
-				width: 100%;
-				border: 10px solid red;
-				padding: 10px;
-			}
-			
-			/* This style applies to any element that has the class="center" specified */
-			.center{
-				margin: auto;
-				text-align:center;
-			}
-		</style>
+		<!-- 
+			These are resources that WE have developed ourselves
+		-->
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<script src="index.js" type="text/javascript"></script>
 		
 		<title>Eric's Demo Page</title>
 	</head>
@@ -33,12 +24,5 @@
 			<!-- The btn-primary class denotes pulls from the Bootstrap stylesheets-->
 			<button class="btn-primary">This is my custom button</button>
 		</div>
-		<script type="text/javascript">
-			// when the document has finished processing the resources in the <head> and loaded the body
-			// run the code inside
-			$(document).ready(function(){
-				console.log('The document has loaded');
-			});
-		</script>
 	</body>
 </html>

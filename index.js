@@ -1,3 +1,8 @@
+var apiBaseUrl = 'https://www.thesportsdb.com/api/v1/json/1/';
+var apiSearchTeamsByLeagueUrl = 'search_all_teams.php?l=';
+
+
+
 // when the document has finished processing the resources in the <head> and loaded the body
 // run the code inside
 $(document).ready(function(){
@@ -12,6 +17,14 @@ $(document).ready(function(){
         var textElement = $('#my-text');
         // Now that we have the text input element, we can get the value from it
         var text = textElement.val();
-        alert('You clicked the button! Text was '+text);
+
+        var fullUrlToSearch = apiBaseUrl + apiSearchTeamsByLeagueUrl + text;
+        $.getJSON(fullUrlToSearch).done(function(results){
+            console.log(results);
+            alert('Fetched teams. See console for details');
+        }).fail(function(error){
+            console.log(error);
+            alert('There was an error. See console for details');
+        })
     });
 });

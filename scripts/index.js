@@ -1,6 +1,3 @@
-var apiBaseUrl = 'https://www.thesportsdb.com/api/v1/json/1/';
-var apiSearchTeamsByLeagueUrl = 'search_all_teams.php?l=';
-
 // when the document has finished processing the resources in the <head> and loaded the body
 // run the code inside
 $(document).ready(function(){
@@ -16,26 +13,22 @@ $(document).ready(function(){
         // Now that we have the text input element, we can get the value from it
         var text = textElement.val();
 
-        var fullUrlToSearch = apiBaseUrl + apiSearchTeamsByLeagueUrl + text;
-        $.getJSON(fullUrlToSearch).done(function(results){
+        var fullUrlToSearch = searchTeamsByLeagueUrl + text;
+        callApi(fullUrlToSearch, function(results){
             var teams = results.teams;
             console.log(teams);
             var tableBodyElement = $('#results-body');
             for(var i = 0; i < teams.length; i++){
                 var team = teams[i];
                 var newRow = '<tr>';
-                newRow += '<td>' + team.strTeam + '</td>';
+                newRow += '<td><a href="team.html?team='+team.idTeam+'">' + team.strTeam + '</a></td>';
                 newRow += '<td>' + team.strStadiumLocation + '</td>';
                 newRow += '<td>' + team.strStadium + '</td>';
                 newRow += '<td>' + team.strManager + '</td>';
-                
                 newRow += '</tr>';
                 tableBodyElement.append(newRow);
             }
-        }).fail(function(error){
-            console.log(error);
-            alert('There was an error. See console for details');
-        })
+        });
     });
 
     textElement.keypress(function(keypressEvent){

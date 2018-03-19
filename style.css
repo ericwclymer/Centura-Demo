@@ -1,0 +1,28 @@
+/* This style applies to the whole "body", unless overridden */
+body {
+    margin: auto;
+    width: 100%;
+    border: 10px solid red;
+    padding: 10px;
+}
+
+/* This style applies to any element that has the class="center" specified */
+.center{
+    margin: auto;
+    text-align:center;
+}
+
+.team-image{
+    width:20%;
+}
+
+.player-image{
+    width:80px;
+}
+
+.back-btn{
+    position: fixed;
+    left: 40px;
+    bottom: 40px;
+    background: rgba(150, 150, 150, 0.8);
+}

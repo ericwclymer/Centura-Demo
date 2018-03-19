@@ -3,7 +3,7 @@
 $(document).ready(function(){
     console.log('The document has loaded');
     var textElement = $('#my-text');
-    var buttonElement = $('button');
+    var buttonElement = $('#search-button');
     // We're going to query all button elements, and "subscribe" to the "click" event
     // Any time a click event happens on a button element, it will call the following code
     // `clickEvent` contains additional information about the "click" that happened

@@ -30,3 +30,11 @@ function callApi(restOfUrl, callback){
         alert('Uh oh, something went wrong calling the API');
     });
 }
+
+$(document).ready(function(){
+    $('body').append('<button class="back-btn btn">Back</button>');
+
+    $('.back-btn').click(function(){
+        history.back();
+    });
+});

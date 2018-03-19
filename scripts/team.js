@@ -25,7 +25,7 @@ $(document).ready(function(){
             newRow += '<td>' + player.strWage + '</td>';
             newRow += '<td>' + player.strHeight + '</td>';
             newRow += '<td>' + player.strWeight + '</td>';
-            newRow += '<td><img class="player-image" src="' + player.strCutout + '"/></td>';
+            newRow += player.strCutout ? '<td><img class="player-image" src="' + player.strCutout + '"/></td>' : '<td></td>';
             newRow += '</tr>';
             tableBodyElement.append(newRow);
         }

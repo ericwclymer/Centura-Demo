@@ -4,7 +4,9 @@ $(document).ready(function(){
         console.log(results);
         var player = results.players[0];
         $('#player-description').text(player.strDescriptionEN);
-        $('#player-main-image').attr('src', player.strCutout);
+        if(player.strCutout){
+            $('#player-main-image').attr('src', player.strCutout);
+        }
         $('#header').text(player.strPlayer);
     });
 });

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var team = getUrlParameter('team');
-    callApi(teamDetails+team, function(results){
+    callApi(urls.teamDetails+team, function(results){
         console.log(results);
         var team = results.teams[0];
         $('#team-description').text(team.strDescriptionEN);
@@ -12,6 +12,24 @@ $(document).ready(function(){
             imagesEl.append(newImage);
         }
     });
+
+    callApi(urls.teamPlayers+team, function(results){
+        console.log(results);
+        var players = results.player;
+        var tableBodyElement = $('#results-body');
+        for(var i = 0; i < players.length; i++){
+            var player = players[i];
+            var newRow = '<tr>';
+            newRow += '<td><a href="player.html?player='+player.idPlayer+'">' + player.strPlayer + '</a></td>';
+            newRow += '<td>' + player.strPosition + '</td>';
+            newRow += '<td>' + player.strWage + '</td>';
+            newRow += '<td>' + player.strHeight + '</td>';
+            newRow += '<td>' + player.strWeight + '</td>';
+            newRow += '<td><img class="player-image" src="' + player.strCutout + '"/></td>';
+            newRow += '</tr>';
+            tableBodyElement.append(newRow);
+        }
+    })
 });
 
 // taken from https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js

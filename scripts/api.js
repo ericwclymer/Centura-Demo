@@ -1,9 +1,12 @@
-var apiBaseUrl = 'https://www.thesportsdb.com/api/v1/json/1/';
-var searchTeamsByLeagueUrl = 'search_all_teams.php?l=';
-var teamDetails = 'lookupteam.php?id=';
+var urls = {
+    apiBaseUrl: 'https://www.thesportsdb.com/api/v1/json/1/',
+    searchTeamsByLeagueUrl: 'search_all_teams.php?l=',
+    teamDetails: 'lookupteam.php?id=',
+    teamPlayers: 'lookup_all_players.php?id=',
+}
 
 function callApi(restOfUrl, callback){
-    $.getJSON(apiBaseUrl + restOfUrl).done(function(results){
+    $.getJSON(urls.apiBaseUrl + restOfUrl).done(function(results){
         callback(results);
     }).fail(function(error){
         console.log(error);

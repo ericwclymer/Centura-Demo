@@ -13,7 +13,7 @@ $(document).ready(function(){
         // Now that we have the text input element, we can get the value from it
         var text = textElement.val();
 
-        var fullUrlToSearch = searchTeamsByLeagueUrl + text;
+        var fullUrlToSearch = urls.searchTeamsByLeagueUrl + text;
         callApi(fullUrlToSearch, function(results){
             var teams = results.teams;
             console.log(teams);

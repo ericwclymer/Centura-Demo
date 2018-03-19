@@ -13,5 +13,9 @@ body {
 }
 
 .team-image{
-    width:33%;
+    width:20%;
+}
+
+.player-image{
+    width:80px;
 }
